@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Series Approximation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Taylor Series Approximation</h1>
+        
+        <form id="calcForm">
+            <div class="form-group">
+                <label for="expression">Expression (y' or f(x)): </label>
+                <input type="text" id="expression" name="expression" placeholder="e.g. x*x + y*y">
+            </div>
+            
+            <div class="form-group">
+                <label for="x0">x0: </label>
+                <input type="number" id="x0" name="x0" step="any">
+            </div>
+            
+            <div class="form-group">
+                <label for="y0">y(x0): </label>
+                <input type="number" id="y0" name="y0" step="any">
+            </div>
+            
+            <div class="form-group">
+                <label for="x">x: </label>
+                <input type="number" id="x" name="x" step="any">
+            </div>
+            
+            <div class="form-group">
+                <label for="order">Order: </label>
+                <input type="number" id="order" name="order">
+            </div>
+            
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+        
+        <div id="result" class="output"></div>
+        <div id="polynomial" class="output"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
