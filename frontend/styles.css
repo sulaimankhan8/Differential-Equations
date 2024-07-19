@@ -1,38 +1,41 @@
-
 * {
     padding: 5px;
-    margin: 1px;
+    margin: 1px;  
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
-    padding: 10px;
-   
 }
 .equation {
     margin-top: 10px;
-    font-style:;
+    font-style: italic; 
 }
-.equation > span {
+.equation > span,li {
     font-weight: bold;
     font-size: large;
     font-style: italic;
+    padding: 0px;
+}
+li  {
+    padding: 0.2rem;
 }
 .fraction {
-    display: inline;
+    display: inline-block;
     vertical-align: middle;
 }
 .fraction > span {
-display: block;
-text-align: center;
-
+    display: block;
+    text-align: center;   
 }
-
 .fraction > .numerator {
- border-bottom: 1 px solid #000;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding-bottom:0px;
+    margin: 0px;
 }
 .fraction > .denominator {
-    margin-top: -1rem;;
+    margin-top: -4px;
+    font-size: 0.9rem;
 }
 
 sub ,sup {
@@ -41,4 +44,21 @@ sub ,sup {
 sub >sup {
     font-size:0.7rem;
     font-weight: bold;
+}
+sub {
+    font-size:0.7rem;
+    font-weight: bold;
+}
+.x {
+    padding-bottom: 0px;
+}
+b{
+    font-style: normal;
+}
+p {
+    font-weight: 300;
+    font-style: normal;
+}
+li{
+    padding-left: 10px;
 }
