@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Series Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .equation {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .fraction {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .fraction > span {
+            display: block;
+            text-align: center;
+        }
+        .fraction > .numerator {
+            border-bottom: 1px solid #000;
+        }
+        .fraction > .denominator {
+            margin-top: -0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Taylor Series Method</h1>
+    <p>The Taylor series expansion of the solution <i>y(x)</i> around <i>x<sub>0</sub></i> is given by:</p>
+    <div class="equation">
+        y(x) = y(x<sub>0</sub>) + (x - x<sub>0</sub>)y'(x<sub>0</sub>) + 
+        <span class="fraction"><span class="numerator">(x - x<sub>0</sub>)<sup>2</sup></span><span class="denominator">2!</span></span> y''(x<sub>0</sub>) + 
+        <span class="fraction"><span class="numerator">(x - x<sub>0</sub>)<sup>3</sup></span><span class="denominator">3!</span></span> y'''(x<sub>0</sub>) + &hellip;
+    </div>
+    <p>For a small step size <i>h</i>, the approximation of <i>y(x<sub>0</sub> + h)</i> is:</p>
+    <div class="equation">
+        y(x<sub>0</sub> + h) &asymp; y(x<sub>0</sub>) + hy'(x<sub>0</sub>) + 
+        <span class="fraction"><span class="numerator">h<sup>2</sup></span><span class="denominator">2!</span></span> y''(x<sub>0</sub>) + 
+        <span class="fraction"><span class="numerator">h<sup>3</sup></span><span class="denominator">3!</span></span> y'''(x<sub>0</sub>) + &hellip;
+    </div>
+</body>
+</html>
