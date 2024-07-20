@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differential Equations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eulersMethod.html">Page 1</a></li>
+                <li><a href="page2.html">Page 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="intro">
+        <h1>Taylor Series Method</h1>
+        <p>The Taylor series method is a numerical technique used to solve ordinary differential equations (ODEs). This method approximates the solution of an ODE by expanding it into a Taylor series around a point. The Taylor series method is particularly useful for solving initial value problems.</p>
+
+        <h3>Taylor Series Method for solving ODEs</h3>
+        
+        <div class="equation" >
+
+
+           <p>consider an initial value problem</p>
+             <span>y'(x)= f(x,y), &nbsp y(x<sub>0</sub>)=y<sub>0</sub>
+             </span>
+        
+           <p>The Taylor series expansion of the solution y(x) around x<sub>0</sub> is given by:</p>
+            <span>
+            y(x) = y(x<sub>0</sub>) + (x &minus; x<sub>0</sub>)y'(x<sub>0</sub>) + 
+            </span>
+            <span class="fraction">
+                <span class="numerator">
+                    <sup class="x">(x-x<sub>0</sub>)<sup>2</sup></sup></span>
+            <span class="denominator">2!</span></span><span>y"(x<sub>0</sub>) + </span>
+            <span class="fraction">
+                <span class="numerator">
+                    <sup class="x">(x-x<sub>0</sub>)<sup>3</sup></sup></span>
+            <span class="denominator">3!</span></span><span>y'''(x<sub>0</sub>) + . . .
+            </span>           
+        </div>
+       
+        <div class="equation">
+            <h3>Steps to apply the Taylor Series Method</h3>
+            
+           
+           <p> <b>1.Calculate the Derivatives:</b> Compute the necessary higher-order derivatives of  <i>y</i> at <i>x<sub>0</sub></i>.For example: </p>           
+            <ul>
+                <li>y'= f(x,y)</li>
+                <li>y"= <span class="fraction">
+                    <span class="numerator">
+                        <sup>d</sup></span>
+                <span class="denominator">dx</span>     
+                </span>f(x,y) =
+                <span class="fraction">
+                    <span class="numerator">
+                        <sup>&part;f</sup></span>
+                <span class="denominator">&part;x</span>
+                </span>+
+                <span class="fraction">
+                    <span class="numerator">
+                        <sup>(&part;f)</sup></span>
+                <span class="denominator">(&part;x)</span>
+                </span>y'
+                </li>
+                <li>y'"= <span class="fraction">
+                    <span class="numerator">
+                        <sup>d</sup></span>
+                <span class="denominator">dx</span>
+                </span>y ,<b>and so on</b></li>
+            </ul> 
+             </div>
+
+             <div>
+                <p>
+                    <b>2.Evaluate Derivatives at Initial Point:
+
+                    </b>evaluate the derivatives at the initial point (x<sub>0</sub>,y<sub>0</sub>)</p>
+            </div>
+
+             <div>
+                    <p>
+                    <b>3.Construct the Taylor Series:
+
+                    </b>Form the Taylor series up to the desired order 
+                    𝑛
+                    </p>
+                </div>
+
+             <div>
+                <p>
+                    <b>4.Approximate the Solution:
+
+                    </b>Use the Taylor series to approximate the solution at (x<sub>0</sub>+h)</p>
+            </div>
+
+             
+    </section>
+    <section  class="po">
+        <div class="card">
+        <div class="container">
+            <h1>Taylor Series Approximation</h1>
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="expression">Expression (y' or f(x)):</label>
+                    <input type="text" id="expression" name="expression" placeholder="e.g. x*x+y*y" value="x+y">
+                </div>
+
+                <div class="form-group">
+                    <label for="x0">x0: </label>
+                    <input type="number" id="x0" name="x0" step="any" placeholder="0" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="y0">y(x0): </label>
+                    <input type="number" id="y0" name="y0" step="any" placeholder="1" value="1" >
+                </div>
+                
+                <div class="form-group">
+                    <label for="x">x: </label>
+                    <input type="number" id="x" name="x" step="any" placeholder="0.1" value="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="order">Order: </label>
+                    <input type="number" id="order" name="order" placeholder="4" value="4">
+                </div>
+
+                <button type="button" onclick="calculate()">Calculate</button>
+  
+                <div id="result" class="output">result</div>
+                <div id="polynomial" class="output"></div>
+            </form>
+           
+        </div></div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>

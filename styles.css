@@ -1,0 +1,266 @@
+* {
+    padding: 5px;
+    margin: 1px;  
+} 
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+.intro {
+    margin-left: 3rem;
+    max-width: 900px;
+}
+p {
+    font-size: 1.1rem;
+}
+.equation> {
+    font-size: 1.1rem;
+}
+.equation {
+    margin-top: 10px;
+    font-style: italic; 
+}
+.equation > span,li {
+    font-weight: bold;
+    font-size: large;
+    font-style: italic;
+    padding: 0px;
+   
+}
+h3{
+    font-style:normal ;
+    font-weight: bold;
+}
+li  {
+    padding: 0.2rem;
+}
+.fraction {
+    display: inline-block;
+    vertical-align: middle;
+}
+.fraction > span {
+    display: block;
+    text-align: center;   
+}
+.fraction > .numerator {
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding-bottom:0px;
+    margin: 0px;
+}
+.fraction > .denominator {
+    margin-top: -4px;
+    font-size: 0.9rem;
+}
+
+sub ,sup {
+    padding: 0px;
+}
+sub >sup {
+    font-size:0.7rem;
+    font-weight: bold;
+}
+sub {
+    font-size:0.7rem;
+    font-weight: bold;
+}
+.x {
+    padding-bottom: 0px;
+}
+b{
+    font-style: normal;
+}
+p {
+    font-weight: 300;
+    font-style: normal;
+}
+li {
+    padding-left: 10px;
+}
+.container {
+    max-width: 600px;
+
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 1rem;
+   
+    position: relative;
+    z-index: 2;
+    overflow: auto;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    font-size:1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin:auto;
+    padding: 10px;
+    background-color: rgb(32, 30, 67);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem ;
+}
+
+button:hover{
+    background-color: rgb(19, 75, 112);
+}
+.output {
+    margin-top: 20px;
+    border-top: 1px solid #d3ddda;
+    padding-top: 10px;
+    border-radius: 1rem;
+  
+}
+
+.output p {
+    margin: 5px 0;
+    font-size: 16px;
+   
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 105vh;
+    --card-width: calc(var(--card-height) / 1.4);
+  }
+  
+  
+ .po{
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+  
+  
+  .card {
+    min-width: 300px;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: rgb(88 199 250 0.9 );
+    cursor: pointer;
+    font-family: cursive;
+    
+  }
+  
+  .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1.5s;
+  }
+  .card:hover:after {
+    animation:none ;
+    opacity:0 ;
+  }
+  
+  
+  .card::before {
+    content: "";
+    width: 102%;
+    height: 99%;
+    border-radius: 1rem;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: ;
+      left: ;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) /6.5);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 105%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 3.5));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1.5;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+ 
