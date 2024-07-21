@@ -299,7 +299,7 @@ button:hover{
       , #5ddcff, #3c67e3 43%, #4e00c2);
       position: absolute;
       z-index: -1;
-      top: ;
+      top: 1;
       left: ;
       animation: spin 2.5s linear infinite;
   }
@@ -343,7 +343,7 @@ button:hover{
     border:  rgba(255, 255, 255, 0.303);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     
-    margin: 10px;
+    margin: auto;
   }
 
   .space{
@@ -470,7 +470,7 @@ background-position-x: 1000px;
     border: none;
     
     
-    margin: ;
+    margin:;
     
     background-image: linear-gradient(
       var(--rotate)
@@ -481,4 +481,55 @@ background-position-x: 1000px;
   }
 
 
-  
+  @media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    li{
+      margin: 10px;
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        font-size: 1.2em;
+    }
+
+    .output p {
+        font-size: 14px;
+    }
+}
+
+@keyframes spin {
+    to {
+        --rotate: 492deg;
+    }
+}
+@media (min-width:480px){
+  body{
+   padding: auto;
+  }
+}
