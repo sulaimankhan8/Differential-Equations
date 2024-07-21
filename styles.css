@@ -1,26 +1,67 @@
 * {
     padding: 5px;
     margin: 1px;  
+    
 } 
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .nav-item {
+        padding: 0.5rem 1rem;
+        animation: slideIn 0.5s ease-in-out;
+    }
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.page{
+  margin-bottom:100px ;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10px;
-    background-color: #f0f0f0;
+    
+    background-image: url("mapOfMathmatics.jpg") ;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center 100px; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
     padding: 10px;
+    
+    
 }
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
 }
+li {
+    
+    text-decoration: none;
+    color: black;
+    max-width: 50rem;
+    padding: 10px;
+    margin: 10px 10px 10px 4rem;
 
-nav ul li {
+}
+
+
+
+nav ul {
     margin-right: 20px;
 }
 
-nav ul li a {
+nav ul  a {
     text-decoration: none;
     color: black;
 }
@@ -31,6 +72,11 @@ nav ul li a {
 p {
     font-size: 1.1rem;
 }
+.center-equation {
+    text-align: center;
+    font-size: 1rem;
+    font-family: script ;
+}
 .equation> {
     font-size: 1.1rem;
 }
@@ -38,7 +84,7 @@ p {
     margin-top: 10px;
     font-style: italic; 
 }
-.equation > span,li {
+.equation > span,li,p>span {
     font-weight: bold;
     font-size: large;
     font-style: italic;
@@ -82,6 +128,9 @@ sub {
     font-size:0.7rem;
     font-weight: bold;
 }
+i > sub {
+    font-size: 1.1rem;
+}
 .x {
     padding-bottom: 0px;
 }
@@ -107,11 +156,28 @@ li {
     z-index: 2;
     overflow: auto;
 }
-
+ .center-equation > span{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+i {
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: script;
+}
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #040404;
+    font-weight: bold;
+}
+.heading {
+    margin-top: 2rem;
+    margin-bottom: 0px;
+    padding: 10px;
+    text-align: left;
+    color: #040404;
+    
     font-weight: bold;
 }
 
@@ -190,7 +256,7 @@ button:hover{
   }
   
   
-  .card {
+  .card  {
     min-width: 300px;
     width: var(--card-width);
     height: var(--card-height);
@@ -208,6 +274,7 @@ button:hover{
     font-family: cursive;
     
   }
+  
   
   .card:hover {
     color: rgb(88 199 250 / 100%);
@@ -263,4 +330,14 @@ button:hover{
     }
   }
   
- 
+  .glass {
+    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    margin: auto;
+  }

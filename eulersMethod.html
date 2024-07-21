@@ -7,35 +7,236 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="eulersMethod.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
+    <header class="page-header" >
+        <div class="header-content">
+
+            <a href="index.html" class="logo">
+                <img src="icon.png" alt="icon">
+            </a>
+
+        <nav class="navigation">
+            <div class="navigation-items">
+            <ul class="nav-list">
+                <li><a class="nav-item" href="index.html">Home</a></li>
+                <li><a class="nav-item" href="eulersMethod.html">Page 1</a></li>
+                <li><a class="nav-item" href="page2.html">Page 2</a></li>
             </ul>
+           </div>
         </nav>
+
+            <a href="#signup" class="new-account-btn">New account</a>
+            <a href="#login" class="sign-in-btn">Sign in</a>
+
+        </div>
     </header>
+    <section class="intro glass">
+        <h1>Eulers Method</h1><br>
+        <p>Euler's Method is a straightforward numerical approach for solving ordinary differential equations (ODEs) with an initial value. It approximates the solution by taking small steps from an initial condition and using the derivative information.</p><br>
+
+        <h3>The General Approach</h3><br>
+        
+        <div class="equation ">
+
+
+           <p>Given a differential equation of the form:</p>
+           <div class="center-equation">
+             <span class="fraction ">
+                <span class="numerator "><sup>dy</sup></span>
+                <span class="denominator">dx</span></span><span>= &nbsp;f(x,y)</span>
+            </div>
+
+             
+        
+        <p>with an initial conditiony<i>y(x<sub>0</sub>)= y<sub>0</sub>,</i>Euler's method approximates the solution at discrete points.</p>
+            <span>
+           
+       
+        <div class="equation">   
+             <div>
+                <h3>Steps of Euler's Method</h3>
+                     <br>
+                <p>
+                    <b>1.Start at the initial point:</b><i>(x<sub>0</sub>,y<sub>0</sub>)</i>
+                </p>           
+            </div>
+
+             <div>
+                <p>
+                    <b>2.Calculate the slope</b> using the differential equation:
+
+                    evaluate the derivatives at the initial point <i>f(x<sub>0</sub>,y<sub>0</sub>)</i></p>
+             </div>
+
+                <div>
+                    <p>
+                    <b>3.Move to the next point:</b>
+                        <div>
+                           <p class="center-equation">
+                            <span>
+                               <i>x<sub>(n+1)</sub>= x<sub>n</sub>+h</i> 
+                               <br><br><br>
+                               <i>y<sub>(n+1)</sub>=y<sub>n</sub>+ h * f(x<sub>n</sub>,y<sub>n</sub>)</i>
+                           </span>
+                           </p><br>
+                            <p>where<i>h</i>is the step size. to  be reach <i>x</i></p>
+                        </div>
+                    </p>
+                </div>
+
+             <div>
+                <p>
+                    <b>4.Repeat
+
+                    </b>steps 2 and 3 until the desired <i>x</i>-value is reached</p>
+            </div>
+        </div> 
+
+             
+    </section><br><br>
+    <section class="intro glass">
+        
+        <h3>Example</h3>
+        <p>Consider the differential equation:</p>
+        <div class="center-equation">
+          <span class="fraction ">
+             <span class="numerator "><sup>dy</sup></span>
+             <span class="denominator">dx</span></span><span>= &nbsp;x+y</span>
+         </div>
+         <p>with the initial condition <i>y(0) = 1</i></p><br>
+         <p>To approximate <i>y</i> at <i>x</i>= 1 using a step size <i>h</i>such that <i>i = 5</i>, where <i>n</i> is numberof steps .</p>
+
+         <h1 class="heading">Given:</h1>
+         <ul>
+            <li><p>Differential equation:<i>
+                <span class="fraction ">
+                       <span class="numerator "><sup>dy</sup></span>
+                       <span class="denominator">dx</span></span><span>= &nbsp;x+y</span></i></p>
+            </li>
+            <li>
+                <p>initial condition: <i>y(0)</i>= 1</p>
+            </li>
+            <li>
+                <p>Number of steps: <i>n</i>= 5</p>
+            </li>
+            <li>
+                <p>Find <i>y</i>at <i>x</i>= 1</p>
+            </li>
+         </ul>
+
+            <div>
+                <ul>
+                    <h1 class="heading">Step-by-Step Calculation</h1>
+                    <li >
+                        <p>First, we determine the step size <i>h:</p>
+                            <br>
+                            
+                            <div class="center-equation">
+                            h =
+                         
+                        <span class="fraction ">
+                            <span class="numerator "><sup>x-x<sub>0</sub></sup></span>
+                            <span class="denominator">n</span></span> =  
+        
+                        <span class="fraction ">
+                            <span class="numerator "><sup>1-0</sup></span>
+                            <span class="denominator">5</span></span><span>= 0.2</i>
+                                </div>
+        
+
+                    </li>
+                    <li>
+                        <p>Using Euler's Method, we iteratively calculate <i>y</i> for each steps:</p>
+
+                        <ol>
+                              <p>initial values <i>x<sub>0</sub>= 0, y<sub>0</sub>= 1</i></p>
+
+                            <li> Iteration 1:
+                                <div class="center-equation">
+                                    <p><i>y<sub>1</sub>= y<sub>0</sub> + h * f(x<sub>0</sub>, y<sub>0</sub>)
+                                    <br><br><br>
+                                    
+                                    y<sub>1</sub>=1+0.2⋅(0+1)=1+0.2=1.2 
+                                    <br><br><br>
+                                    
+                                    x<sub>1</sub>= x<sub>0</sub>+ h = 0 + 0.2=0.2
+                                    
+                                    </i>
+                                </p><br>
+
+                                </div>
+
+                            </li>
+                            <li> Iteration 2:
+                                <div class="center-equation">
+                                    <p><i>
+                                        y<sub>2</sub> = y<sub>1</sub> + h * f(x<sub>1</sub>, y<sub>1</sub>)<br><br>
+                                        y<sub>2</sub> = 1.2 + 0.2 * (0.2 + 1.2) = 1.2 + 0.2 * 1.4 = 1.2 + 0.28 = 1.48<br><br>
+                                        x<sub>2</sub> = x<sub>1</sub> + h = 0.2 + 0.2 = 0.4
+                                    </i></p>
+                                    <br>
+                                </div>
+                            </li>
+                            <li> Iteration 3:
+                                <div class="center-equation">
+                                    <p><i>
+                                        y<sub>3</sub> = y<sub>2</sub> + h * f(x<sub>2</sub>, y<sub>2</sub>)<br><br>
+                                        y<sub>3</sub> = 1.48 + 0.2 * (0.4 + 1.48) = 1.48 + 0.2 * 1.88 = 1.48 + 0.376 = 1.856<br><br>
+                                        x<sub>3</sub> = x<sub>2</sub> + h = 0.4 + 0.2 = 0.6
+                                    </i></p>
+                                    <br>
+                                </div>
+                            </li>
+                            <li> Iteration 4:
+                                <div class="center-equation">
+                                    <p><i>
+                                        y<sub>4</sub> = y<sub>3</sub> + h * f(x<sub>3</sub>, y<sub>3</sub>)<br><br>
+                                        y<sub>4</sub> = 1.856 + 0.2 * (0.6 + 1.856) = 1.856 + 0.2 * 2.456 = 1.856 + 0.4912 = 2.3472<br><br>
+                                        x<sub>4</sub> = x<sub>3</sub> + h = 0.6 + 0.2 = 0.8
+                                    </i></p>
+                                    <br>
+                                </div>
+                            </li>
+                            <li> Iteration 5:
+                                <div class="center-equation">
+                                    <p><i>
+                                        y<sub>5</sub> = y<sub>4</sub> + h * f(x<sub>4</sub>, y<sub>4</sub>)<br><br>
+                                        y<sub>5</sub> = 2.3472 + 0.2 * (0.8 + 2.3472) = 2.3472 + 0.2 * 3.1472 = 2.3472 + 0.62944 = 2.97664<br><br>
+                                        x<sub>5</sub> = x<sub>4</sub> + h = 0.8 + 0.2 = 1.0
+                                    </i></p>
+                                    <br>
+                                </div>
+                            </li>
+                           
+                        </ol>
+                    </li>
+                    
+                </ul>
+                <div>
+                    <p>So, the approximate value of <i>y</i>at <i>x</i>=1 using Euler's Method with <i>n = 5 is y(1)≈2.97664.</i> <br><br>
+                        yep, you now know eulers  method through and through , now go find more questions and pratice  with the euler's calculator                    </p>
+                </div>
+          
+    </section><br><br>
     <section class="po">
         <div class="card">
             <div class="container">
-                <h1>Eulers Method Approximation</h1>
+                <h1> &nbsp; Eulers Method Approximation  &nbsp;</h1>
                 <form id="euler-form">
                     <label for="x0">x0:</label>
                     <input type="number" id="x0" value="0" step="any" required>
-                    <br><br>
+                    <br>
                     <label for="y0">y0:</label>
                     <input type="number" id="y0" value="1" step="any" required>
-                    <br><br>
-                    <label for="h">Step size (h):</label>
+                    <br>
+                    <label for="h">Step size (h):(if given)</label>
                     <input type="number" id="h" step="any">
-                    <br><br>
+                    <br>
                     <label for="x-target">Target x:</label>
                     <input type="number" id="x-target" value="1" step="any">
                     <br><br>
                     <label for="n">Number of steps (n):</label>
                     <input type="number" value="5" id="n" required>
-                    <br><br>
+                    <br>
                     <label for="equation">Equation (dy/dx = f(x, y)):</label>
                     <input type="text"  value="x+y" id="equation" required>
                     <br><br>
@@ -51,7 +252,11 @@
             </div>
         </div>
     </section>
-    
+    <section class="intro glass">
+        <h1>things to consider fot this calculator</h1>
+        <p> 1.if you have a question with a given <i>x</i> you dont have to entr h as it will be  calculated with n <br>
+            2.take <i>n</i> 5 or 6 in most cases but enter it according to the problem at hand</p>
+    </section>
 
     <script src="eulersMerhod.js"></script>
 </body>

@@ -19,7 +19,7 @@ document.getElementById('euler-form').addEventListener('submit', function(event)
         return;
     }
 
-    // Function to parse the equation input and return the function f(x, y)
+    // Function to parse the equation input and return the function f(x, y),as its as string when inputed as "text"
     const f = new Function('x', 'y', `return ${equation};`);
 
     // Euler's method implementation
