@@ -19,8 +19,24 @@ document.getElementById('euler-form').addEventListener('submit', function(event)
         return;
     }
 
+    function cot(x) {
+        return 1 / Math.tan(x);
+    }
+    
+    function sec(x) {
+        return 1 / Math.cos(x);
+    }
+    
+    function cosec(x) {
+        return 1 / Math.sin(x);
+    }
+    
+    function log(x) {
+        return Math.log10(x);  // Base-10 logarithm
+    }
+
     // Function to parse the equation input and return the function f(x, y),as its as string when inputed as "text"
-    const f = new Function('x', 'y', `return ${equation};`);
+    const f = new Function('x', 'y','Math', 'cot', 'sec', 'cosec', 'log', `return ${equation};`);
 
     // Euler's method implementation
     function eulerMethod(f, x0, y0, h, n) {
@@ -30,7 +46,7 @@ document.getElementById('euler-form').addEventListener('submit', function(event)
         const polynomials = [`y = ${y0}`];
 
         for (let i = 0; i < n; i++) {
-            const dydx = f(x, y);
+            const dydx = f(x, y,Math, cot, cosec, sec ,log);
             y = y + h * dydx;
             x = x + h;
             results.push([x, y]);
