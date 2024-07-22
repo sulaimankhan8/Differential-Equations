@@ -5,8 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euler's Method Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+
+    
+  <div class="menuToggle"></div>
+  <div class="sidebar">
+    <ul >
+      <li class="logo" style="--bg:#333;">
+        <a class="tToggle">
+          <div class="icon  ">
+            <img  class="img1" src="icon.png" alt="">
+          </div>
+          <div class="text " style="font-style: normal;">CalculatorZ</div>
+        </a>
+      </li>
+      <div class="Menulist" style="font-style: normal;">
+        <li style="--bg:#ffa117; font-style: normal ;" class="active">
+        <a href="#">
+          <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+          <div class="text">Home</div>
+        </a>
+        </li>
+        <li style="--bg:#0fc70f; font-style: normal;">
+        <a href="#">
+          <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+          <div class="text">Profile</div>
+        </a>
+        </li>
+        <li style="--bg:#f436d4;font-style: normal; ">
+        <a href="#">
+          <div class="icon"><ion-icon name="archive-outline"></ion-icon></div>
+          <div class="text">Inbox</div>
+        </a>
+        </li>
+        <li style="--bg:#b145e9;font-style: normal;">
+        <a href="index.html">
+          <div class="icon"><ion-icon name="analytics-outline"></ion-icon></div>
+          <div class="text">Pages</div>
+        </a>
+        </li>
+        <li style="--bg:#e60606;font-style: normal;">
+        <a href="#">
+          <div class="icon"><ion-icon name="help-outline"></ion-icon></div>
+          <div class="text">Questions</div>
+        </a>
+        </li>
+        <li style="--bg:#1d8ce6;font-style: normal;">
+        <a href="#">
+          <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+          <div class="text">Setting</div>
+        </a>
+        </li>
+      </div>
+
+      <div class="bottom">
+        <li style="--bg:#333;font-style: normal;">
+          <a href="#">
+            <div class="icon">
+              <div class="imgBx">
+                <img src="icon.png" alt="">
+              </div>
+            </div>
+          
+          </a>
+          </li>
+          <li style="--bg:#333;font-style: normal;">
+            <a href="#">
+              <div class="icon"><ion-icon name="log-in-outline"></ion-icon></div>
+              <div class="text">logout</div>
+            </a>
+            </li>
+      </div>
+    </ul>
+  </div>
  
     <section class="intro glass ">
         <h1>Eulers Method</h1><br><br>
@@ -34,20 +107,20 @@
              <div>
                 <h3>Steps of Euler's Method</h3>
                      <br>
-                <p>
+                <p class="co">
                     <b>1.Start at the initial point:</b><i>(x<sub>0</sub>,y<sub>0</sub>)</i>
                 </p>           
             </div>
 
              <div>
-                <p>
+                <p class="co">
                     <b>2.Calculate the slope</b> using the differential equation:
 
                     evaluate the derivatives at the initial point <i>f(x<sub>0</sub>,y<sub>0</sub>)</i></p>
              </div>
 
                 <div>
-                    <p>
+                    <p class="co">
                     <b>3.Move to the next point:</b>
                         <div>
                            <p class="center-equation">
@@ -63,7 +136,7 @@
                 </div>
 
              <div>
-                <p>
+                <p class="co">
                     <b>4.Repeat
 
                     </b>steps 2 and 3 until the desired <i>x</i>-value is reached</p>
@@ -86,18 +159,18 @@
 
          <h1 class="heading">Given:</h1>
          <ul>
-            <li><p>Differential equation:<i>
+            <li class="co"><p >Differential equation:<i>
                 <span class="fraction ">
                        <span class="numerator "><sup>dy</sup></span>
                        <span class="denominator">dx</span></span><span>= &nbsp;x+y</span></i></p>
             </li>
-            <li>
+            <li class="co">
                 <p>initial condition: <i>y(0)</i>= 1</p>
             </li>
-            <li>
+            <li class="co">
                 <p>Number of steps: <i>n</i>= 5</p>
             </li>
-            <li>
+            <li class="co">
                 <p>Find <i>y</i>at <i>x</i>= 1</p>
             </li>
          </ul>
@@ -105,7 +178,7 @@
             <div>
                 <ul>
                     <h1 class="heading">Step-by-Step Calculation</h1>
-                    <li >
+                    <li  class="co">
                         <p>First, we determine the step size <i>h:</p>
                             <br>
                             
@@ -123,15 +196,15 @@
         
 
                     </li>
-                    <li>
+                    <li class="co">
                         <p>Using Euler's Method, we iteratively calculate <i>y</i> for each steps:</p>
 
                         <ol>
                               <p>initial values <i>x<sub>0</sub>= 0, y<sub>0</sub>= 1</i></p>
 
-                            <li> Iteration 1:
-                                <div class="center-equation">
-                                    <p><i>y<sub>1</sub>= y<sub>0</sub> + h * f(x<sub>0</sub>, y<sub>0</sub>)
+                            <li class="cop"> Iteration 1:
+                                <div class="center-equation ">
+                                    <p class="co"><i>y<sub>1</sub>= y<sub>0</sub> + h * f(x<sub>0</sub>, y<sub>0</sub>)
                                     <br><br><br>
                                     
                                     y<sub>1</sub>=1+0.2*(0+1)=1+0.2=1.2 
@@ -145,9 +218,9 @@
                                 </div>
 
                             </li>
-                            <li> Iteration 2:
+                            <li class="cop"> Iteration 2:
                                 <div class="center-equation">
-                                    <p><i>
+                                    <p class="co"><i>
                                         y<sub>2</sub> = y<sub>1</sub> + h * f(x<sub>1</sub>, y<sub>1</sub>)<br><br>
                                         y<sub>2</sub> = 1.2 + 0.2 * (0.2 + 1.2) = 1.2 + 0.2 * 1.4 = 1.2 + 0.28 = 1.48<br><br>
                                         x<sub>2</sub> = x<sub>1</sub> + h = 0.2 + 0.2 = 0.4
@@ -155,9 +228,9 @@
                                     <br>
                                 </div>
                             </li>
-                            <li> Iteration 3:
+                            <li class="cop"> Iteration 3:
                                 <div class="center-equation">
-                                    <p><i>
+                                    <p class="co"><i>
                                         y<sub>3</sub> = y<sub>2</sub> + h * f(x<sub>2</sub>, y<sub>2</sub>)<br><br>
                                         y<sub>3</sub> = 1.48 + 0.2 * (0.4 + 1.48) = 1.48 + 0.2 * 1.88 = 1.48 + 0.376 = 1.856<br><br>
                                         x<sub>3</sub> = x<sub>2</sub> + h = 0.4 + 0.2 = 0.6
@@ -165,9 +238,9 @@
                                     <br>
                                 </div>
                             </li>
-                            <li> Iteration 4:
+                            <li class="cop"> Iteration 4:
                                 <div class="center-equation">
-                                    <p><i>
+                                    <p class="co"><i>
                                         y<sub>4</sub> = y<sub>3</sub> + h * f(x<sub>3</sub>, y<sub>3</sub>)<br><br>
                                         y<sub>4</sub> = 1.856 + 0.2 * (0.6 + 1.856) = 1.856 + 0.2 * 2.456 = 1.856 + 0.4912 = 2.3472<br><br>
                                         x<sub>4</sub> = x<sub>3</sub> + h = 0.6 + 0.2 = 0.8
@@ -175,9 +248,9 @@
                                     <br>
                                 </div>
                             </li>
-                            <li> Iteration 5:
+                            <li class="cop "> Iteration 5:
                                 <div class="center-equation">
-                                    <p><i>
+                                    <p class="co"><i>
                                         y<sub>5</sub> = y<sub>4</sub> + h * f(x<sub>4</sub>, y<sub>4</sub>)<br><br>
                                         y<sub>5</sub> = 2.3472 + 0.2 * (0.8 + 2.3472) = 2.3472 + 0.2 * 3.1472 = 2.3472 + 0.62944 = 2.97664<br><br>
                                         x<sub>5</sub> = x<sub>4</sub> + h = 0.8 + 0.2 = 1.0
@@ -231,14 +304,14 @@
             </div>
         </div>
     </section>
-    <section class="intro glass space">
+    <section class="intro glass space ">
         <h1>things to consider for this calculator</h1>
         
-            <ol>
+            <ol class="guide co">
                 <li>1.if you have a question with a given <i>x</i> you dont have to entr h as it will be  calculated with n</li>
                 <li>2.take <i>n</i> 5 or 6 in most cases but enter it according to the problem at hand</li>
                 <li>Equation Format Instructions: 
-                    <ul>
+                    <ul class=" co">
                         <li>Use Math.sin(x) for sine, Math.cos(x) for cosine, and Math.tan(x) for tangent.</li>
                         <li>Use cot(x) for cotangent, sec(x) for secant, and cosec(x) for cosecant.</li>
                         <li>Use log(x) for the base-10 logarithm.</li>
