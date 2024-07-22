@@ -4,73 +4,45 @@
     box-sizing:border-box ;
     
 } 
-@media (max-width: 768px) {
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
+:root 
+{
+  --clar:rgba(192, 86, 192, 0.332);
+  --clr:rgb(0, 0, 0);
+}
 
-    .nav-item {
-        padding: 0.5rem 1rem;
-        animation: slideIn 0.5s ease-in-out;
-    }
-}
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 .page{
   margin-bottom:100px ;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    background-image: url("mapOfMaths.png") ;
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position:top center ; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed;
-    
-    
-    
+    background-image: url("moms.jpg") ;
+    background-size: cover; 
+    background-position:top center ; 
+    background-repeat: no-repeat; 
+    background-attachment:fixed;
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-}
+
 li {
     
     text-decoration: none;
     color: black;
     max-width: 50rem;
-    padding: 10px;
+    
     margin: 10px 10px 10px 4rem;
-
+    padding: 0.2rem;
 }
 
 
 
-nav ul {
-    margin-right: 20px;
-}
 
-nav ul  a {
-    text-decoration: none;
-    color: black;
-}
+
 .intro {
     padding: 14px;
     margin:1rem 5rem 5rem 5rem;
   
     max-width: 900px;
+    margin:auto;
 }
 p {
     font-size: 1.1rem;
@@ -97,9 +69,6 @@ p {
 h3{
     font-style:normal ;
     font-weight: bold;
-}
-li  {
-    padding: 0.2rem;
 }
 .fraction {
     display: inline-block;
@@ -170,10 +139,16 @@ i {
 }
 
 h1 {
+    font-size: 2rem;
     text-align: center;
     color: #040404;
     font-weight: bold;
 }
+h1:hover{
+  color: #3c67e3;
+  transition: 1.5s;
+}
+
 .heading {
     margin-top: 2rem;
     margin-bottom: 0px;
@@ -210,7 +185,7 @@ button {
     text-align: center;
     margin:auto;
     padding: 10px;
-    background-color: rgb(32, 30, 67);
+    background-color: rgba(0, 0, 225, 0.7);
     color: white;
     border: none;
     border-radius: 0.5rem;
@@ -219,7 +194,8 @@ button {
 }
 
 button:hover{
-    background-color: rgb(19, 75, 112);
+    background-color: rgb(88, 169, 250);
+    transition: 1.5s;
 }
 .output {
     margin-top: 20px;
@@ -280,7 +256,7 @@ button:hover{
   
   
   .card:hover {
-    color: rgb(88 199 250 / 100%);
+    color: rgb(88, 169, 250);
     transition: color 1.5s;
   }
   .card:hover:after {
@@ -343,7 +319,7 @@ button:hover{
     border:  rgba(255, 255, 255, 0.303);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     
-    margin: auto;
+  
   }
 
   .space{
@@ -528,3 +504,5 @@ background-position-x: 1000px;
         --rotate: 492deg;
     }
 }
+
+----------------------------------------------------------------------------------------------------------------
