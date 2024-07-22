@@ -528,8 +528,3 @@ background-position-x: 1000px;
         --rotate: 492deg;
     }
 }
-@media (min-width:480px){
-  body{
-   padding: auto;
-  }
-}
