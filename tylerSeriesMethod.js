@@ -31,10 +31,25 @@ function calculate() {
 
     try {
         const { expression, x0, y0, x, order } = data;
-        const f = (x, y) => math.evaluate(expression, { x: x, y: y });
+
+        const customMath = {
+            sin:Math.sin,
+            cos:Math.cos,
+            tan:Math.tan,
+            cot:(x) => 1/Math.tan,
+            sec:(x) => 1/Math.cos,
+            cosec:(x) => 1/Math.sin,
+            log:Math.log10
+           
+        }
+
+        const preparedExpression = expression.replace(/sin|cos|tan|cot|sec|cosec|log/g,match => `customMath.${match}`);
+
+
+        const f = (x, y) => new Function('x','y','customMath',`return ${preparedExpression}`)(x,y,customMath);
         const { sum, polynomial } = taylorSeries(f, parseFloat(x0), parseFloat(y0), parseFloat(x), parseInt(order));
         resultElement.innerHTML = `<strong>Taylor Series approximation at x = ${x}:</strong> ${sum}`;
-        polynomialElement.innerHTML = `<strong>Polynomial:</strong> ${polynomial}`;
+        polynomialElement.innerHTML = `<strong >Polynomial:</strong> ${polynomial}`;
     } catch (error) {
         resultElement.textContent = `Error: ${error.message}`;
         polynomialElement.textContent = "";

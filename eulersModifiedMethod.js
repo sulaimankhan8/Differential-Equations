@@ -35,29 +35,32 @@ document.getElementById('euler-form').addEventListener('submit', function(event)
         return Math.log10(x);  // Base-10 logarithm
     }
 
-    // Function to parse the equation input and return the function f(x, y),as its as string when inputed as "text"
+    // Function to parse the equation input and return the function f(x, y)
     const f = new Function('x', 'y','Math', 'cot', 'sec', 'cosec', 'log', `return ${equation};`);
 
-    // Euler's method implementation
-    function eulerMethod(f, x0, y0, h, n) {
+    // Euler's modified method implementation
+    function eulerModifiedMethod(f, x0, y0, h, n) {
         let x = x0;
         let y = y0;
+        let xs = x0 + h;
         const results = [[x, y]];
         const polynomials = [`y = ${y0}`];
 
-        for (let i = 0; i < n; i++) {
-            const dydx = f(x, y,Math, cot, cosec, sec ,log);
-            y = y + h * dydx;
-            x = x + h;
+        for (let i = 1; i <= n; i++) {
+            let y1 = y + h * f(x, y, Math, cot, sec, cosec, log);
+            let  yNew = y + h * (f(x, y, Math, cot, sec, cosec, log) + f(xs, y1, Math, cot, sec, cosec, log)) / 2;
+            polynomials.push(`${y} = ${y1} + h/2 * [f(x${i-1}, y${i-1}) + f(x${i}, y${i})]`);
+            y = yNew;
+            x += h;
+            xs += h;
             results.push([x, y]);
-            polynomials.push(`y = ${y} + ${h} * (${equation.replace(/x/g, x).replace(/y/g, y)})`);
         }
 
-        return { results, polynomials };
+        return {results , polynomials};
     }
 
     // Calculate the results
-    const { results, polynomials } = eulerMethod(f, x0, y0, h, n);
+    const {results, polynomials} = eulerModifiedMethod(f, x0, y0, h, n);
 
     // Display the results
     const iterationsElement = document.getElementById('iterations');
@@ -69,29 +72,7 @@ document.getElementById('euler-form').addEventListener('submit', function(event)
     });
     
     polynomialsElement.innerHTML = 'Polynomials:\n';
-    polynomials.forEach((poly, index) => {
-        polynomialsElement.innerHTML += `Step ${index+1}: ${poly}\n`;
+    polynomials.forEach((poly,index) => {
+        polynomialsElement.innerHTML +=`Step ${index+1}: ${poly}\n`;
     });
 });
-
-
-
-let menuToggle = document.querySelector('.menuToggle');
-let tToggle = document.querySelector('.tToggle');
-let sidebar = document.querySelector('.sidebar');
-menuToggle.onclick =function(){
-menuToggle.classList.toggle('active');
-sidebar.classList.toggle('active');}
-tToggle.onclick =function(){
-menuToggle.classList.toggle('active');
-sidebar.classList.toggle('active');}
-
-let Menulist= document.querySelectorAll('.Menulist li');
-function activeLink(){
-    Menulist.forEach((item) =>
-    item.classList.remove('active'));
-    this.classList.add('active')
-}
-
-Menulist.forEach((item) =>
-item.addEventListener('click', activeLink));

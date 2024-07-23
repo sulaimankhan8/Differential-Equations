@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Differential Equations</title>
+    <title>Taylor Series Method</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
+
+
     <div class="menuToggle"></div>
     <div class="sidebar">
       <ul>
@@ -19,14 +22,14 @@
           </a>
         </li>
         <div class="Menulist" style="font-style: normal">
-          <li style="--bg: #ffa117; font-style: normal" class="active">
+          <li style="--bg: #ffa117; font-style: normal" >
             <a href="#">
               <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
               <div class="text">Home</div>
             </a>
           </li>
           <li style="--bg: #0fc70f; font-style: normal">
-            <a href="#">
+            <a href="tylerSeriesMethod.html">
               <div class="icon">
                 <ion-icon name="person-outline"></ion-icon>
               </div>
@@ -42,7 +45,7 @@
             </a>
           </li>
           <li style="--bg: #b145e9; font-style: normal">
-            <a href="tylerSeriesMethod.html">
+            <a href="eulersMethod.html">
               <div class="icon">
                 <ion-icon name="analytics-outline"></ion-icon>
               </div>
@@ -85,8 +88,114 @@
           </li>
         </div>
       </ul>
-    </div>
+    </div> 
 
+    <section class="intro glass">
+      <h1>Taylor Series Method</h1>
+      <br /><br />
+      <p>
+        The Taylor series method is a numerical technique used to solve ordinary
+        differential equations (ODEs). This method approximates the solution of
+        an ODE by expanding it into a Taylor series around a point. The Taylor
+        series method is particularly useful for solving initial value problems.
+      </p>
+      <br />
+
+      <h3>Taylor Series Method for solving ODEs</h3>
+      <br />
+
+      <div class="equation" >
+        <p>consider an initial value problem</p>
+        <br />
+       <div> <i
+        >y'(x) = f(x,y), &nbsp y(x<sub>0</sub>) = y<sub>0</sub></i
+            ></div><br /></div>
+
+        <p>
+          The Taylor series expansion of the solution <i> y(x) </i>around <i>x<sub>0</sub></i>
+          is given by:
+        </p>
+        <br />
+        <div style="padding-left: 1rem;" class="center-equation">
+        <i>
+            y(x) = y(x<sub>0</sub>) + (x &minus; x<sub>0</sub>)y'(x<sub>0</sub>)
+            + 
+          <span class="fraction">
+            <span class="numerator">
+              <sup ><i>(x-x<sub>0</sub>)</i><sup>2</sup></sup></span
+            >
+            <span class="denominator"><sub style="font-size: 1rem;"><i>2!</i></sub></span></span
+          ><span><i>y"(x<sub>0</sub>) + </span>
+          <span class="fraction">
+            <span class="numerator" >
+              <sup><i>(x-x<sub>0</sub>)</i><sup>3</sup></sup></span
+            >
+            <span class="denominator"><i>3!</i></span></span
+          ><span><i>y'''(x<sub>0</sub>) + . . .</i> </span></div><br />
+      </div>
+
+      <div class="equation">
+        <h3>Steps to apply the Taylor Series Method</h3><br>
+
+        <div style="padding-left: 30px;">
+        <p >
+          <b>1.Calculate the Derivatives:</b> Compute the necessary higher-order
+          derivatives of <i>y</i> at <i>x<sub>0</sub></i
+          >.For example:
+        </p></div>
+        <ul style="padding:1rem 0  1rem 3rem;">
+          <i>
+            <li>y'= f(x,y)</li>
+            <li>
+              y"=
+              <span class="fraction">
+                <span class="numerator"> <sup>d</sup></span>
+                <span class="denominator">dx</span> </span
+              >f(x,y) =
+              <span class="fraction">
+                <span class="numerator"> <sup>&part;f</sup></span>
+                <span class="denominator">&part;x</span> </span
+              >+
+              <span class="fraction">
+                <span class="numerator"> <sup>(&part;f)</sup></span>
+                <span class="denominator">(&part;x)</span> </span
+              >y'
+            </li>
+            <li>
+              y'"=
+              <span class="fraction">
+                <span class="numerator"> <sup>d</sup></span>
+                <span class="denominator">dx</span> </span
+              >y ,<b>and so on</b>
+            </li></i
+          >
+        </ul>
+      </div>
+
+      <div style="padding-left: 30px;">
+        <p>
+          <b>2.Evaluate Derivatives at Initial Point: </b>evaluate the
+          derivatives at the initial point <i>(x<sub>0</sub>,y<sub>0</sub>)</i>
+        </p>
+      </div>
+
+      <div style="padding-left: 30px;">
+        <p>
+          <b>3.Construct the Taylor Series: </b>Form the Taylor series up to the
+          desired order
+          <i>𝑛</i>
+        </p>
+      </div>
+
+      <div style="padding-left: 30px;">
+        <p >
+          <b>4.Approximate the Solution: </b>Use the Taylor series to
+          approximate the solution at <i>(x<sub>0</sub>+h)</i>
+        </p>
+      </div>
+    </section>
+
+    
     <section class="intro glass">
       <h3 class="cop">Example</h3>
       <br />
@@ -317,12 +426,158 @@
       </div>
     </section>
 
-    
-    <div></div>
-    <div></div>
-    <div></div>
+    <section class="po">
+      <div class="card">
+        <div class="container">
+          <h1>&nbsp; Taylor Series Approximation &nbsp;</h1>
+          <br />
+          <form id="calcForm">
+            <div class="form-group">
+              <label for="expression">Expression (y' or f(x)):</label>
+              <input
+                type="text"
+                id="expression"
+                name="expression"
+                placeholder="e.g. x*x+y*y"
+                value="x+y"
+              />
+            </div>
+            <br />
 
-    <script src="script.js"></script>
+            <div class="form-group">
+              <label for="x0">x0: </label>
+              <input
+                type="number"
+                id="x0"
+                name="x0"
+                step="any"
+                placeholder="0"
+                value="0"
+              />
+            </div>
+            <br />
+
+            <div class="form-group">
+              <label for="y0">y(x0): </label>
+              <input
+                type="number"
+                id="y0"
+                name="y0"
+                step="any"
+                placeholder="1"
+                value="1"
+              />
+            </div>
+            <br />
+
+            <div class="form-group">
+              <label for="x">x: </label>
+              <input
+                type="number"
+                id="x"
+                name="x"
+                step="any"
+                placeholder="0.1"
+                value="0.1"
+              />
+            </div>
+            <br />
+
+            <div class="form-group">
+              <label for="order">Order: </label>
+              <input
+                type="number"
+                id="order"
+                name="order"
+                placeholder="4"
+                value="4"
+              />
+            </div>
+            <br />
+
+            <button type="button" onclick="calculate()">Calculate</button>
+            <br>
+
+            <h2>Results</h2>
+            <div id="result" class="output"><br>
+            
+            
+            </div>
+            <br />
+            <div id="polynomial" class="output"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="intro glass space">
+      <h1>things to consider for this calculator</h1>
+
+      <ol class="guide co">
+        <li>
+          1.if you have a question with a given <i>x</i> you dont have to entr h
+          as it will be calculated with n
+        </li>
+        <li>
+          2.take <i>n</i> 5 or 6 in most cases but enter it according to the
+          problem at hand
+        </li>
+        <li>
+          Equation Format Instructions:
+          <ul class="co">
+            <li>
+              Use Math.sin(x) for sine, Math.cos(x) for cosine, and Math.tan(x)
+              for tangent.
+            </li>
+            <li>
+              Use cot(x) for cotangent, sec(x) for secant, and cosec(x) for
+              cosecant.
+            </li>
+            <li>Use log(x) for the base-10 logarithm.</li>
+            <li>
+              Ensure to use x and y as the variable names for the input
+              equation.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <footer class="glass2">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <ul class="social-icon">
+        <li>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </li>
+
+        <li>
+          <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+        </li>
+
+        <li>
+          <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
+        </li>
+
+        <li>
+          <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+        </li>
+      </ul>
+      <br />
+      <p>
+        <a href="https://www.youtube.com/@domainofscience" target="_blank"
+          >© Background by :Domain of science
+        </a>
+      </p>
+    </footer>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -331,5 +586,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
+
+    <script src="tylerSeriesMethod.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
